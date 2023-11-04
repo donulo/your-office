@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import * as Font from 'expo-font';
-//import AppLoading from 'expo-app-loading';
+import AppLoading from 'expo-app-loading';
 
 const fonts = () => Font.loadAsync({
   'mt-bold': require('./assets/fonts/Montserrat-Bold.ttf'),
@@ -15,18 +15,25 @@ const fonts = () => Font.loadAsync({
 
 export default function App() {
   const [font, setFont] = useState(false);
-  return (
-    <View style={styles.back}>
+  if (font) {
+    return (
+      <View style={styles.back}>
         <View style={styles.cycle}>
-          <Image source={require('./assets/logo.png')}/>
+          <Image source={require('./assets/logo.png')} />
         </View>
         <Text style={styles.text}>Твой умный офис</Text>
-    </View>
-  );
+      </View>
+    );
+  }
+  else {
+    return (
+      <AppLoading startAsync={fonts} onFinish={() => setFont(true)} onError />
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  cycle:{
+  cycle: {
     backgroundColor: '#222222',
     color: '#222222',
     width: '130%',
@@ -35,13 +42,13 @@ const styles = StyleSheet.create({
     borderRadius: 500,
     top: -160,
   },
-  back:{
+  back: {
     width: '100%',
     height: '100%',
     backgroundColor: '#8ACCB0',
     alignItems: 'center',
   },
-  text:{
+  text: {
     color: 'black',
     fontSize: 30,
     fontFamily: 'mt-bold',
