@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableWithoutFeedback } from 'react-native';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
@@ -19,9 +19,15 @@ export default function App() {
     return (
       <View style={styles.back}>
         <View style={styles.cycle}>
-          <Image source={require('./assets/logo.png')} />
+          <Image source={require('./assets/logo.png')} style={styles.img}/>
         </View>
         <Text style={styles.text}>Твой умный офис</Text>
+        <TouchableWithoutFeedback>
+          <View style={styles.button}><Text style={styles.textButton}>Вход</Text></View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback>
+          <View style={styles.button}><Text style={styles.textButton}>Регистрация</Text></View>
+        </TouchableWithoutFeedback>
       </View>
     );
   }
@@ -33,6 +39,11 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  img:{
+    top: 40,
+    width: 250,
+    height: 250,
+  },
   cycle: {
     backgroundColor: '#222222',
     color: '#222222',
@@ -40,6 +51,8 @@ const styles = StyleSheet.create({
     height: 550,
     borderWidth: 1,
     borderRadius: 500,
+    alignItems: 'center',
+    justifyContent: 'center',
     top: -160,
   },
   back: {
@@ -52,5 +65,18 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 30,
     fontFamily: 'mt-bold',
+  },
+  button:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '82%',
+    backgroundColor: '#222222',
+    borderRadius: 13,
+    height: 55,
+  },
+  textButton:{
+    color: 'white',
+    fontSize: 18,
+    fontFamily: 'mt-semibold',
   },
 });
