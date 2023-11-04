@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     fontFamily: 'mt-bold',
   },
   button:{
+    marginTop: 40,
     alignItems: 'center',
     justifyContent: 'center',
     width: '82%',
