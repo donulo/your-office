@@ -20,7 +20,6 @@ export default function SignUp() {
             <View style={styles.input}></View>
             <View style={styles.input}></View>
             <View style={styles.input}></View>
-            <Text style={styles.texth3}>Забыли пароль?</Text>
           </View>
           <View style={styles.inputFields}>
             <TouchableWithoutFeedback>
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#222222',
       borderRadius: 13,
       height: 60,
-      marginBottom: 25,
+      marginBottom: 10,
     },
     textButton: {
       color: 'white',
@@ -85,10 +84,10 @@ const styles = StyleSheet.create({
       backgroundColor: '#222222',
       color: '#222222',
       width: '106%',
-      height: 270,
+      height: 250,
       borderWidth: 1,
-      borderRadius: 52,
-      top: -20,
+      borderBottomLeftRadius: 52,
+      borderBottomRightRadius: 52,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -102,13 +101,7 @@ const styles = StyleSheet.create({
       color: 'white',
       fontSize: 14,
       fontFamily: 'mt-regular',
-      letterSpacing: 3,
-    },
-    texth3:{
-      color: 'black',
-      fontSize: 12,
-      fontFamily: 'mt-regular',
-      letterSpacing: 3,
+      letterSpacing: 2,
     },
     texth4:{
       color: '#2C3E36',
