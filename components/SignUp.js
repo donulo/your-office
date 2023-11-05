@@ -16,8 +16,8 @@ export default function SignUp({ navigation }) {
         </View>
         <View style={styles.div}>
           <View style={styles.inputFields}>
-            <View style={styles.input}><Text style={styles.texth6}>Номер</Text></View>
-            <View style={styles.input}><Text style={styles.texth6}>Почта</Text></View>
+            <View style={styles.input}><TextInput style={styles.TextInput} placeholder="Номер"/></View>
+            <View style={styles.input}><TextInput style={styles.TextInput} placeholder="Почта"/></View>
             <View style={styles.password}>
                 <Text style={styles.texth6}>Придумайте пароль</Text>
                 <Image style={styles.img} source={require('../assets/eye1.png')} />
@@ -41,6 +41,18 @@ export default function SignUp({ navigation }) {
     );
 }
 const styles = StyleSheet.create({
+  TextInput:{
+    color: '#222222',
+    fontSize: 16,
+    fontFamily: 'mt-regular',
+    letterSpacing: 2,    
+    paddingLeft: 30,
+    paddingRight: 30,
+    width: '100%',
+    height: 60,
+    borderRadius: 13,
+    borderColor: 'black',
+  },
     img:{
         position: 'relative',
         width: 25,
@@ -89,8 +101,6 @@ const styles = StyleSheet.create({
     input:{
         width: '100%',
         height: 60,
-        paddingLeft: 30,
-        paddingRight: 30,
         borderRadius: 13,
         backgroundColor: 'rgba(255, 255, 255, 0.45)',
         borderColor: '#222222',
