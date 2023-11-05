@@ -24,7 +24,7 @@ export default function SignIn({ navigation }) {
             <Text style={styles.texth3}>Забыли пароль?</Text>
           </View>
           <View style={styles.inputFields}>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Map')}>
                 <View style={styles.button}><Text style={styles.textButton}>Войти</Text></View>
             </TouchableWithoutFeedback>
             <Text style={styles.texth4}>Ещё нет акаунта?</Text>  

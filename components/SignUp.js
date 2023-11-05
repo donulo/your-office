@@ -28,7 +28,7 @@ export default function SignUp({ navigation }) {
             </View>
           </View>
           <View style={styles.inputFields}>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Map')}>
                 <View style={styles.button}><Text style={styles.textButton}>Зарегистрироваться</Text></View>
             </TouchableWithoutFeedback>
             <Text style={styles.texth4}>Уже есть аккаунт?</Text>  
