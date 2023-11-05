@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image } from 'react-native';
 
 
 export default function SignUp() {
@@ -16,10 +16,16 @@ export default function SignUp() {
         </View>
         <View style={styles.div}>
           <View style={styles.inputFields}>
-            <View style={styles.input}></View>
-            <View style={styles.input}></View>
-            <View style={styles.input}></View>
-            <View style={styles.input}></View>
+            <View style={styles.input}><Text style={styles.texth6}>Номер</Text></View>
+            <View style={styles.input}><Text style={styles.texth6}>Почта</Text></View>
+            <View style={styles.password}>
+                <Text style={styles.texth6}>Придумайте пароль</Text>
+                <Image style={styles.img} source={require('../assets/eye1.png')} />
+            </View>
+            <View style={styles.password}>
+                <Text style={styles.texth6}>Повторите пароль</Text>
+                <Image style={styles.img} source={require('../assets/eye1.png')} />
+            </View>
           </View>
           <View style={styles.inputFields}>
             <TouchableWithoutFeedback>
@@ -35,6 +41,31 @@ export default function SignUp() {
     );
 }
 const styles = StyleSheet.create({
+    img:{
+        position: 'relative',
+        width: 25,
+        height: 22,
+    },
+    password:{
+        width: '100%',
+        height: 60,
+        paddingLeft: 30,
+        paddingRight: 30,
+        borderRadius: 13,
+        backgroundColor: 'rgba(255, 255, 255, 0.45)',
+        borderColor: '#222222',
+        borderWidth: 2,
+        marginBottom: 25,
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    texth6: {
+      color: '#222222',
+      fontSize: 16,
+      fontFamily: 'mt-regular',   
+      letterSpacing: 2,
+    },
     button: {
       marginTop: 40,
       alignItems: 'center',
@@ -56,13 +87,16 @@ const styles = StyleSheet.create({
       textAlignVertical: 'center',
     },
     input:{
-      width: '100%',
-      height: 60,
-      borderRadius: 13,
-      backgroundColor: 'rgba(255, 255, 255, 0.45)',
-      borderColor: '#222222',
-      borderWidth: 2,
-      marginBottom: 25,
+        width: '100%',
+        height: 60,
+        paddingLeft: 30,
+        paddingRight: 30,
+        borderRadius: 13,
+        backgroundColor: 'rgba(255, 255, 255, 0.45)',
+        borderColor: '#222222',
+        borderWidth: 2,
+        marginBottom: 25,
+        justifyContent: 'center'
     },
     textInCircle:{
       width: '80%',
