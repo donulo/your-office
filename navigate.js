@@ -14,17 +14,23 @@ export default function Navigate() {
             <Stack.Screen
                 name="Main"
                 component={Main}
-                options={{ title: 'Главная' }}
+                options={{
+                    headerShown: false,
+                  }}
             />
             <Stack.Screen
                 name="SignUp"
                 component={SignUp}
-                options={{ title: 'Регистрация' }}
+                options={{
+                    headerShown: false,
+                  }}
             />
             <Stack.Screen
                 name="SignIn"
                 component={SignIn}
-                options={{ title: 'Вход' }}
+                options={{
+                    headerShown: false,
+                  }}
             />
         </Stack.Navigator>
     </NavigationContainer>;

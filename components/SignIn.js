@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image } from 'react-native';
 
 
-export default function SignIn() {
+export default function SignIn({ navigation }) {
     const [text, setValue] = useState('');
     const onChangeMail = (text) =>{ setValue(text)};
     const onChangePassword = () =>{};
@@ -28,7 +28,7 @@ export default function SignIn() {
                 <View style={styles.button}><Text style={styles.textButton}>Войти</Text></View>
             </TouchableWithoutFeedback>
             <Text style={styles.texth4}>Ещё нет акаунта?</Text>  
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('SignUp')}>
                 <Text style={styles.texth4}>Зарегистрироваться</Text>            
             </TouchableWithoutFeedback>
           </View>
