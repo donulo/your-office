@@ -11,9 +11,9 @@ export default function Main({ navigation }) {
             <View style={styles.cycle}>
                 <Image style={styles.img} source={require('../assets/logo.png')} />
             </View>
-
             <Text style={styles.text}>Твой умный офис</Text>
-
+            
+            
             <TouchableWithoutFeedback onPress={loadScene('SignIn')}>
                 <View style={styles.button}><Text style={styles.textButton}>Вход</Text></View>
             </TouchableWithoutFeedback>
