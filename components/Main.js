@@ -2,10 +2,6 @@ import React from "react";
 import { StyleSheet, Text, View, Image, TouchableWithoutFeedback } from 'react-native';
 
 export default function Main({ navigation }) {
-    const loadScene = (scene) => {
-        navigation.navigate(scene);
-    }
-
     return (
         <View style={styles.back}>
             <View style={styles.div}>
@@ -15,10 +11,10 @@ export default function Main({ navigation }) {
             </View>
             <View style={styles.div1}>
                 <Text style={styles.text}>Твой умный офис</Text>
-                <TouchableWithoutFeedback onPress={loadScene('SignIn')}>
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('SignIn')}>
                     <View style={styles.button}><Text style={styles.textButton}>Вход</Text></View>
                 </TouchableWithoutFeedback>
-                <TouchableWithoutFeedback onPress={loadScene('SignUp')}>
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('SignUp')}>
                     <View style={styles.button}><Text style={styles.textButton}>Регистрация</Text></View>
                 </TouchableWithoutFeedback>
             </View>
@@ -27,11 +23,11 @@ export default function Main({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    div:{
+    div: {
         width: '100%',
         alignItems: 'center',
     },
-    div1:{
+    div1: {
         height: '50%',
         width: '100%',
         alignItems: 'center',
