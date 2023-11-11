@@ -1,59 +1,59 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image } from 'react-native';
 
-export default function Map() {
+export default function Map({ navigation }) {
   return (
     <View style={styles.back}>
-        <View style={styles.common}>
-          <TouchableWithoutFeedback>
-            <View style={styles.arrow}>
-              <Image style={styles.imgarrow} source={require('../assets/burger.png')} />
-            </View>
+      <View style={styles.common}>
+        <TouchableWithoutFeedback>
+          <View style={styles.arrow}>
+            <Image style={styles.imgarrow} source={require('../assets/burger.png')} />
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate('Settings')}>
+          <View style={styles.settings}>
+            <Image style={styles.imgsettings} source={require('../assets/settings.png')} />
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+      <View style={styles.circle}>
+        <View style={styles.elementInCircle}>
+          <TouchableWithoutFeedback onPress={() => navigation.navigate('Profile')}>
+            <Image style={styles.img1} source={require('../assets/imagesformap/profile.png')} />
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback>
-            <View style={styles.settings}>
-              <Image style={styles.imgsettings} source={require('../assets/settings.png')} />
-            </View>
+            <Image style={styles.img2} source={require('../assets/imagesformap/chat.png')} />
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback>
+            <Image style={styles.img3} source={require('../assets/imagesformap/calendar.png')} />
           </TouchableWithoutFeedback>
         </View>
-        <View style={styles.circle}>
-           <View style={styles.elementInCircle}>
-           <TouchableWithoutFeedback>
-              <Image style={styles.img1} source={require('../assets/imagesformap/profile.png')} />
-           </TouchableWithoutFeedback>
-           <TouchableWithoutFeedback>
-              <Image style={styles.img2} source={require('../assets/imagesformap/chat.png')} />
-           </TouchableWithoutFeedback>
-           <TouchableWithoutFeedback>
-              <Image style={styles.img3} source={require('../assets/imagesformap/calendar.png')} />
-           </TouchableWithoutFeedback>
-            </View>     
-        </View>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  imgarrow:{
+  imgarrow: {
     width: 30,
     height: 22,
   },
-  imgsettings:{
+  imgsettings: {
     width: 27,
     height: 27.76,
   },
-  arrow:{
+  arrow: {
     backgroundColor: '#577A6A',
     width: 48,
     height: 48,
     borderRadius: 25,
     position: 'absolute',
-    left:20,
+    left: 20,
     top: 20,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  settings:{
+  settings: {
     backgroundColor: '#577A6A',
     width: 48,
     height: 48,
@@ -65,30 +65,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  img1:{
+  img1: {
     left: 20,
     width: 30,
     height: 33,
   },
-  img2:{
+  img2: {
     width: 35,
     height: 33,
   },
-  img3:{
+  img3: {
     right: 20,
     width: 40,
     height: 40,
   },
-  common:{
+  common: {
     width: '100%'
   },
-  elementInCircle:{
+  elementInCircle: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
     width: '100%'
   },
-  circle:{
+  circle: {
     backgroundColor: '#222222',
     color: '#222222',
     width: '110%',
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  back:{
+  back: {
     width: '100%',
     height: '100%',
     backgroundColor: '#8ACCB0',
