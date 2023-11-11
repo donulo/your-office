@@ -11,7 +11,7 @@ export default function Profile({ navigation }) {
         <View style={styles.back}>
           <TouchableWithoutFeedback>
             <View style={styles.arrow}>
-              <Image style={styles.imgarrow} source={require('../assets/burger.png')} />
+              <Image style={styles.imgarrow} source={require('../assets/arrow.png')} />
             </View>
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback>
