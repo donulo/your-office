@@ -14,11 +14,6 @@ export default function Settings({ navigation }) {
               <Image style={styles.imgarrow} source={require('../assets/burger.png')} />
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback>
-            <View style={styles.settings}>
-              <Image style={styles.imgsettings} source={require('../assets/settings.png')} />
-            </View>
-          </TouchableWithoutFeedback>
         </View>
     );
 }
@@ -27,10 +22,6 @@ const styles = StyleSheet.create({
         width: 30,
         height: 22,
       },
-      imgsettings:{
-        width: 27,
-        height: 27.76,
-      },
       arrow:{
         backgroundColor: '#577A6A',
         width: 48,
@@ -38,18 +29,6 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         position: 'absolute',
         left:20,
-        top: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      settings:{
-        backgroundColor: '#577A6A',
-        width: 48,
-        height: 48,
-        borderRadius: 25,
-        position: 'absolute',
-        alignSelf: 'flex-end',
-        right: 20,
         top: 20,
         alignItems: 'center',
         justifyContent: 'center',
