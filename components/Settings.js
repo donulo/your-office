@@ -10,28 +10,28 @@ export default function Settings({ navigation }) {
       <View style={styles.div}>
         <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
           <View style={styles.arrow}>
-            {/* <Image style={styles.imgarrow} source={require('../assets/arrow.png')} /> */}
+            <Image style={styles.imgarrow} source={require('../assets/arrow.png')} />
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.cycle}>
-          {/* <Image style={styles.img} source={require('../assets/logo.png')} /> */}
+          <Image style={styles.img} source={require('../assets/logo.png')} />
         </View>
       </View>
       <View style={styles.div1}>
         <View style={styles.block}>
-          <View style={styles.forimages}></View>
+          <View style={styles.forimages}><Image style={styles.imgcostructor} source={require('../assets/imagesforsettings/costructor.png')} /></View>
           <Text style={styles.texth1}>Конструктор</Text>
         </View>
         <View style={styles.block}>
-          <View style={styles.forimages}></View>
+          <View style={styles.forimages}><Image style={styles.imgnotification} source={require('../assets/imagesforsettings/notification.png')} /></View>
           <Text style={styles.texth1}>Уведомления</Text>
         </View>
         <View style={styles.block}>
-          <View style={styles.forimages}></View>
+          <View style={styles.forimages}><Image style={styles.imgmedal} source={require('../assets/imagesforsettings/medal.png')} /></View>
           <Text style={styles.texth1}>Статистика</Text>
         </View>
         <View style={styles.block}>
-          <View style={styles.forimages}></View>
+          <View style={styles.forimages}><Image style={styles.imgquestion} source={require('../assets/imagesforsettings/question.png')} /></View>
           <Text style={styles.texth1}>Помощь</Text>
         </View>
         <TouchableWithoutFeedback onPress={() => navigation.navigate('Main')}>
@@ -42,19 +42,24 @@ export default function Settings({ navigation }) {
   );
 }
 const styles = StyleSheet.create({
+    imgcostructor:{width: 28, height: 28,},
+    imgnotification:{width: 22, height: 25.5,},
+    imgmedal:{width: 20, height: 24.5,},
+    imgquestion:{width: 27, height: 27,},
   texth1: {
     color: 'white',
-    fontSize: 24,
+    fontSize: 20,
     fontFamily: 'mt-regular',
   },
   forimages: {
     width: 60,
     height: '100%',
-
+    alignContent: 'center',
+    justifyContent: 'center',
   },
   block: {
     width: '100%',
-    height: 60,
+    height: 55,
     backgroundColor: '#3B5247',
     borderRadius: 10,
     paddingLeft: 20,
@@ -69,8 +74,8 @@ const styles = StyleSheet.create({
     fontFamily: 'mt-medium',
   },
   imgarrow: {
-    width: 30,
-    height: 22,
+    width: 22,
+    height: 18,
   },
   arrow: {
     backgroundColor: '#577A6A',
@@ -82,6 +87,7 @@ const styles = StyleSheet.create({
     top: 20,
     alignItems: 'center',
     justifyContent: 'center',
+    zIndex: 1,
   },
   div: {
     width: '100%',

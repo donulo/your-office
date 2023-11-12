@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image, ViewStyle } from 'react-native';
 
 export default function Profile({ navigation }) {
   const [text, setValue] = useState('');
@@ -20,25 +20,25 @@ export default function Profile({ navigation }) {
       <View style={styles.div}>
         <View style={styles.block}>
           <View style={styles.blockforava}>
-            <View style={styles.ava}></View>
+            <View style={styles.ava}><Image style={styles.imgava} source={require('../assets/imagesforprofile/User.png')} /></View>
             <View style={styles.reting}><Text style={styles.texth5}>98</Text></View>
-            <View style={styles.forpen}></View>
+            <View style={styles.forpen}><Image style={styles.imgpen} source={require('../assets/imagesforprofile/pen.png')} /></View>
           </View>
           <Text style={styles.texth2}>Анна Ахметова</Text>
           <Text style={styles.texth3}>программист · стаж 10 лет </Text>
         </View>
         <View style={styles.blockitems}>
-
-          <View style={styles.item}><View style={styles.img}></View><Text style={styles.texth1}>Аккаунт</Text></View>
-
-          <View style={styles.item}><View style={styles.img}></View><Text style={styles.texth1}>Достижения</Text></View>
-
-          <View style={styles.item}><View style={styles.img}></View><Text style={styles.texth1}>Рейтинг</Text></View>
-
-          <View style={styles.item}><View style={styles.img}></View><Text style={styles.texth1}>История посещения</Text></View>
-
-          <View style={styles.item}><View style={styles.img}></View><Text style={styles.texth1}>Помощь</Text></View>
-
+          <Seperator/>
+          <View style={styles.item}><View style={styles.img}><Image style={styles.imagkey} source={require('../assets/imagesforprofile/key.png')} /></View><Text style={styles.texth1}>Аккаунт</Text></View>
+          <Seperator/>
+          <View style={styles.item}><View style={styles.img}><Image style={styles.imgstar} source={require('../assets/imagesforprofile/tabler_star.png')} /></View><Text style={styles.texth1}>Достижения</Text></View>
+          <Seperator/>
+          <View style={styles.item}><View style={styles.img}><Image style={styles.imgachive} source={require('../assets/imagesforprofile/achievement.png')} /></View><Text style={styles.texth1}>Рейтинг</Text></View>
+          <Seperator/>
+          <View style={styles.item}><View style={styles.img}><Image style={styles.imgstorage} source={require('../assets/imagesforprofile/storages.png')} /></View><Text style={styles.texth1}>История посещения</Text></View>
+          <Seperator/>
+          <View style={styles.item}><View style={styles.img}><Image style={styles.imgques} source={require('../assets/imagesforprofile/question.png')} /></View><Text style={styles.texth1}>Помощь</Text></View>
+          <Seperator/>
         </View>
         <View style={styles.blockbottom}>
           <TouchableWithoutFeedback onPress={() => navigation.navigate('Main')}>
@@ -49,14 +49,34 @@ export default function Profile({ navigation }) {
     </View>
   );
 }
-
+export const seperatorStyles: ViewStyle = {
+    height: 0.4,
+    backgroundColor: 'white',
+    width: '100%'
+};
+const Seperator = () => <View style={seperatorStyles}/>;
 const styles = StyleSheet.create({
+    imgstorage:{width: 20,height: 21,},
+    imgques:{width: 21,height: 21,},
+    imgachive:{width: 24,height: 24, left: -1},
+    imgstar:{width: 24,height: 23,},
+    imagkey:{width: 20,height: 19,},
+    imgpen:{
+        width: 17,
+        height:17,
+    },
+    imgava:{
+        width: '100%',
+        height: 'undefined',
+        aspectRatio: 1,
+    },
   forpen: {
     width: 45,
     height: 45,
     backgroundColor: '#3B5247',
     position: 'absolute',
     alignSelf: 'flex-end',
+    alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 15,
     top: '75%'
@@ -80,11 +100,10 @@ const styles = StyleSheet.create({
   ava: {
     height: '100%',
     width: '100%',
-    backgroundColor: 'white',
     borderRadius: 300,
   },
   blockforava: {
-    height: '70%',
+    height: '73%',
     width: '70%',
     marginBottom: 10,
   },
@@ -103,9 +122,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   img: {
-    backgroundColor: 'white',
     height: 55,
     width: 55,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   texth1: {
     color: '#3B5247',
@@ -119,7 +139,7 @@ const styles = StyleSheet.create({
     width: '82%',
     backgroundColor: '#3B5247',
     borderRadius: 13,
-    height: 40,
+    height: 55,
     marginBottom: 10,
   },
   textButton: {
@@ -148,8 +168,8 @@ const styles = StyleSheet.create({
     width: '82%',
   },
   imgarrow: {
-    width: 30,
-    height: 22,
+    width: 22,
+    height: 18,
   },
   imgsettings: {
     width: 27,

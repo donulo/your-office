@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
       width: '82%',
       backgroundColor: '#222222',
       borderRadius: 13,
-      height: 60,
+      height: 55,
       marginBottom: 10,
     },
     textButton: {
