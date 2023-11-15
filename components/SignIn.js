@@ -17,9 +17,9 @@ export default function SignIn({ navigation }) {
       </View>
       <View style={styles.div}>
         <View style={styles.inputFields}>
-          <View style={styles.input}><TextInput style={styles.TextInput} placeholder="Почта"/></View>
+          <View style={styles.input}><TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Почта" /></View>
           <View style={styles.password}>
-            <Text style={styles.texth6}>Пароль</Text>
+            <TextInput style={styles.TextInput} maxLength={30} secureTextEntry={true} placeholder="Пароль"/>
             <Image style={styles.img} source={require('../assets/eye1.png')} />
           </View>
           <Text style={styles.texth3}>Забыли пароль?</Text>
@@ -52,9 +52,11 @@ const styles = StyleSheet.create({
     borderColor: 'black',
   },
   img: {
-    position: 'relative',
+    position: 'absolute',
     width: 25,
     height: 22,
+    left: '85%',
+    alignSelf: 'center',
   },
   password: {
     width: '100%',
@@ -62,13 +64,10 @@ const styles = StyleSheet.create({
     borderRadius: 13,
     backgroundColor: 'rgba(255, 255, 255, 0.45)',
     borderColor: '#222222',
-    paddingLeft: 30,
-    paddingRight: 30,
     borderWidth: 2,
     marginBottom: 25,
     alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center'
   },
   texth6: {
     color: '#222222',

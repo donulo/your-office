@@ -5,6 +5,8 @@ import SignIn from './components/SignIn';
 import Map from './components/Map';
 import Profile from './components/Profile';
 import Settings from './components/Settings';
+import Calendar from "./components/Calendar";
+import Chat from "./components/Chat";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -52,6 +54,20 @@ export default function Navigate() {
             <Stack.Screen
                 name="Settings"
                 component={Settings}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name="Calendar"
+                component={Calendar}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name="Chat"
+                component={Chat}
                 options={{
                     headerShown: false,
                 }}
