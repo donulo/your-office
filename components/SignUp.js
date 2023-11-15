@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'rgba(255, 255, 255, 0.45)',
       borderColor: '#222222',
       borderWidth: 2,
-      marginBottom: 25,
+      marginBottom: 20,
       alignItems: 'center',
       justifyContent: 'center'
     },
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
       letterSpacing: 2,
     },
     button: {
-      marginTop: 40,
+      marginTop: 20,
       alignItems: 'center',
       justifyContent: 'center',
       width: '82%',
@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
       fontFamily: 'mt-regular',
     },
     inputFields:{
+      marginTop: 20,
       width: '100%',
       alignItems: 'center',
       textAlignVertical: 'center',
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255, 255, 255, 0.45)',
         borderColor: '#222222',
         borderWidth: 2,
-        marginBottom: 25,
+        marginBottom: 20,
         justifyContent: 'center'
     },
     textInCircle:{
@@ -114,7 +115,6 @@ const styles = StyleSheet.create({
       width: '82%',
       height: '60%',
       alignItems: 'center',
-      justifyContent: 'space-between',
       marginBottom: 55,
     },
     container: {
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     },
     texth1:{
       color: 'white',
-      fontSize: 46,
+      fontSize: 44,
       fontFamily: 'mt-regular',
       marginBottom: 20,
     },

@@ -22,12 +22,12 @@ export default function Chat({ navigation }) {
             <View></View>
       <View style={styles.div}>
         <View style={styles.search}>
-            <TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Поиск" />
+            <TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Поиск"   placeholderTextColor="white"  />
             <Image style={styles.imglupa} source={require('../assets/imagesforchat/lupa.png')} />
         </View>
         <Text style={styles.texth1}>Рабочие чаты</Text>
         <View style={styles.chat}>
-            <ScrollView>
+            <ScrollView style={styles.scroll}>
                 <View style={styles.block}>
                     <View style={styles.leftside}>
                         <Image style={styles.imguser} source={require('../assets/imagesforchat/User.png')} />
@@ -145,7 +145,7 @@ export default function Chat({ navigation }) {
                         <View style={styles.circle}><Text style={styles.texth5}>81</Text></View>
                     </View>
                 </View>
-                <View style={styles.block}>
+                <View style={[styles.block,{flex: 1,marginBottom: 260}]}>
                     <View style={styles.leftside}>
                         <Image style={styles.imguser} source={require('../assets/imagesforchat/User2.png')} />
                         <View style={styles.item}>
@@ -166,6 +166,9 @@ export default function Chat({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+    scroll:{
+        position: 'relative',
+    },
     rightside:{
         alignItems: 'flex-end',
     },
@@ -240,7 +243,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: '30%',
+        marginBottom: '10%',
     },
     imglupa:{
         position: 'absolute',
@@ -261,37 +264,38 @@ const styles = StyleSheet.create({
     backgroundColor: '#3B5247'
   },
 div: {
+    top: 50,
     height: '90%',
     width: '90%',
   },
 imgarrow: {
-    width: 22,
-    height: 18,
+    width: 18,
+    height: 15,
   },
   imgsettings: {
-    width: 27,
-    height: 27.76,
+    width: 26,
+    height: 27,
   },
   arrow: {
     backgroundColor: '#577A6A',
-    width: 48,
-    height: 48,
+    width: 45,
+    height: 45,
     borderRadius: 25,
     position: 'absolute',
     left: 20,
-    top: 20,
+    top: 50,
     alignItems: 'center',
     justifyContent: 'center',
   },
   settings: {
     backgroundColor: '#577A6A',
-    width: 48,
-    height: 48,
+    width: 45,
+    height: 45,
     borderRadius: 25,
     position: 'absolute',
     alignSelf: 'flex-end',
     right: 20,
-    top: 20,
+    top: 50,
     alignItems: 'center',
     justifyContent: 'center',
   },
