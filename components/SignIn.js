@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   back: {
     width: '100%',
     height: '100%',
-    backgroundColor: '#8ACCB0',
+    backgroundColor: '#accfc0',
     alignItems: 'center',
     justifyContent: 'space-between',
   },

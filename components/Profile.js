@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
 
     width: '100%',
     height: '100%',
-    backgroundColor: '#8ACCB0',
+    backgroundColor: '#accfc0',
     alignItems: 'center',
     justifyContent: 'flex-end',
   },

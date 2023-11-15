@@ -302,7 +302,7 @@ imgarrow: {
 back: {
     width: '100%',
     height: '111%',
-    backgroundColor: '#8ACCB0',
+    backgroundColor: '#accfc0',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
