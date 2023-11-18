@@ -24,7 +24,7 @@ export default function Map({ navigation }) {
           <TouchableWithoutFeedback onPress={() => navigation.navigate('Chat')}>
             <Image style={styles.img2} source={require('../assets/imagesformap/chat.png')} />
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => navigation.navigate('Calendar')}>
+          <TouchableWithoutFeedback onPress={() => navigation.navigate('Calendary')}>
             <Image style={styles.img3} source={require('../assets/imagesformap/calendar.png')} />
           </TouchableWithoutFeedback>
         </View>
