@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image } from 'react-native';
+import React, { useState, setState } from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image, ScrollView } from 'react-native';
 
 
 export default function SignUp({ navigation }) {
     const [seePassword, setSeePassword] = useState(true);
-    const [seeConfirmPassword, setSeeConfirmPassword] = useState(true);
+    const [seeConfirmPassword, setSeeConfirmPassword] = useState(true); 
     return (
         <View style={styles.back}>
         <View style={styles.circle}>
@@ -14,22 +14,24 @@ export default function SignUp({ navigation }) {
            </View>     
         </View>
         <View style={styles.div}>
-          <View style={styles.inputFields}>
-            <View style={styles.input}><TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Номер"/></View>
-            <View style={styles.input}><TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Почта"/></View>
-            <View style={styles.password}>
-                <TextInput style={styles.TextInput} maxLength={30} secureTextEntry={seePassword} placeholder="Придумайте пароль"/>
-                <TouchableWithoutFeedback onPress={() => setSeePassword(!seePassword)}>
-                  <Image style={styles.img} source={require('../assets/eye1.png')} />
-                </TouchableWithoutFeedback>
+          <ScrollView style={styles.scroll}>
+            <View style={styles.inputFields}>
+              <View style={styles.input}><TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Номер"/></View> 
+              <View style={styles.input}><TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Почта"/></View>
+              <View style={[styles.password, {marginBottom: 20,}]}>
+                  <TextInput style={[styles.TextInput, {paddingRight: 50, }]} maxLength={20} secureTextEntry={seePassword} placeholder="Придумайте пароль"/>
+                  <TouchableWithoutFeedback onPress={() => setSeePassword(!seePassword)}>
+                    <Image style={styles.img} source={require('../assets/lock.png')} />
+                  </TouchableWithoutFeedback>
+              </View>
+              <View style={styles.password}>
+                  <TextInput style={[styles.TextInput, {paddingRight: 50}]} maxLength={20} secureTextEntry={seeConfirmPassword} placeholder="Повторите пароль"/>
+                  <TouchableWithoutFeedback onPress={() => setSeeConfirmPassword(!seeConfirmPassword)}>
+                    <Image style={styles.img} source={require('../assets/lock.png')} />
+                  </TouchableWithoutFeedback>
+              </View>
             </View>
-            <View style={styles.password}>
-                <TextInput style={styles.TextInput} maxLength={30} secureTextEntry={seeConfirmPassword} placeholder="Повторите пароль"/>
-                <TouchableWithoutFeedback onPress={() => setSeeConfirmPassword(!seeConfirmPassword)}>
-                  <Image style={styles.img} source={require('../assets/eye1.png')} />
-                </TouchableWithoutFeedback>
-            </View>
-          </View>
+          </ScrollView>
           <View style={styles.inputFields}>
             <TouchableWithoutFeedback onPress={() => navigation.navigate('Map')}>
                 <View style={styles.button}><Text style={styles.textButton}>Зарегистрироваться</Text></View>
@@ -44,13 +46,17 @@ export default function SignUp({ navigation }) {
     );
 }
 const styles = StyleSheet.create({
+  scroll:{
+    width: '100%',
+    marginTop: 20,
+  },
   TextInput:{
     color: '#222222',
     fontSize: 16,
     fontFamily: 'mt-regular',
     letterSpacing: 2,    
-    paddingLeft: 30,
-    paddingRight: 30,
+    paddingLeft: 20,
+    paddingRight: 20,
     width: '100%',
     height: 60,
     borderRadius: 13,
@@ -58,9 +64,9 @@ const styles = StyleSheet.create({
   },
     img:{
       position: 'absolute',
-      width: 25,
-      height: 22,
-      left: '85%',
+      width: 16,
+      height: 21,
+      left: '88%',
       alignSelf: 'center',
     },
     password:{
@@ -70,7 +76,6 @@ const styles = StyleSheet.create({
       backgroundColor: 'rgba(255, 255, 255, 0.45)',
       borderColor: '#222222',
       borderWidth: 2,
-      marginBottom: 20,
       alignItems: 'center',
       justifyContent: 'center'
     },
@@ -96,7 +101,6 @@ const styles = StyleSheet.create({
       fontFamily: 'mt-regular',
     },
     inputFields:{
-      marginTop: 20,
       width: '100%',
       alignItems: 'center',
       textAlignVertical: 'center',

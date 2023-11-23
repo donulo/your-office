@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image } fr
 
 
 export default function SignIn({ navigation }) {
+  
   const [seePassword, setSeePassword] = useState(true);
 
   return (
@@ -17,9 +18,9 @@ export default function SignIn({ navigation }) {
         <View style={styles.inputFields}>
           <View style={styles.input}><TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Почта" /></View>
           <View style={styles.password}>
-            <TextInput style={styles.TextInput} maxLength={30} secureTextEntry={seePassword} placeholder="Пароль"/>
+            <TextInput style={styles.TextInput} maxLength={20} secureTextEntry={seePassword} placeholder="Пароль"/>
             <TouchableWithoutFeedback onPress={() => setSeePassword(!seePassword)}>
-              <Image style={styles.img} source={require('../assets/eye1.png')} />
+              <Image style={styles.img} source={require('../assets/lock.png')} />
             </TouchableWithoutFeedback>
           </View>
           <Text style={styles.texth3}>Забыли пароль?</Text>
@@ -38,14 +39,15 @@ export default function SignIn({ navigation }) {
   );
 }
 
+
 const styles = StyleSheet.create({
   TextInput:{
     color: '#222222',
     fontSize: 16,
     fontFamily: 'mt-regular',
     letterSpacing: 2,    
-    paddingLeft: 30,
-    paddingRight: 30,
+    paddingLeft: 20,
+    paddingRight: 50,
     width: '100%',
     height: 60,
     borderRadius: 13,
@@ -53,9 +55,10 @@ const styles = StyleSheet.create({
   },
   img: {
     position: 'absolute',
-    width: 25,
-    height: 22,
-    left: '85%',
+    flex: 1,
+    width: 16,
+    height: 21,
+    left: '88%',
     alignSelf: 'center',
   },
   password: {
@@ -94,6 +97,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     textAlignVertical: 'center',
+    marginTop: 22,
   },
   input: {
     width: '100%',
