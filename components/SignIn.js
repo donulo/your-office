@@ -20,7 +20,7 @@ export default function SignIn({ navigation }) {
           <View style={styles.password}>
             <TextInput style={styles.TextInput} maxLength={20} secureTextEntry={seePassword} placeholder="Пароль"/>
             <TouchableWithoutFeedback onPress={() => setSeePassword(!seePassword)}>
-              <Image style={styles.img} source={require('../assets/lock.png')} />
+              <Image style={styles.img} source={require('../assets/eyeclose.png')} />
             </TouchableWithoutFeedback>
           </View>
           <Text style={styles.texth3}>Забыли пароль?</Text>
@@ -56,9 +56,9 @@ const styles = StyleSheet.create({
   img: {
     position: 'absolute',
     flex: 1,
-    width: 16,
-    height: 21,
-    left: '88%',
+    width: 21,
+      height: 22,
+      left: '87%',
     alignSelf: 'center',
   },
   password: {

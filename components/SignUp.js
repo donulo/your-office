@@ -21,13 +21,13 @@ export default function SignUp({ navigation }) {
               <View style={[styles.password, {marginBottom: 20,}]}>
                   <TextInput style={[styles.TextInput, {paddingRight: 50, }]} maxLength={20} secureTextEntry={seePassword} placeholder="Придумайте пароль"/>
                   <TouchableWithoutFeedback onPress={() => setSeePassword(!seePassword)}>
-                    <Image style={styles.img} source={require('../assets/lock.png')} />
+                    <Image style={styles.img} source={require('../assets/eyeclose.png')} />
                   </TouchableWithoutFeedback>
               </View>
               <View style={styles.password}>
                   <TextInput style={[styles.TextInput, {paddingRight: 50}]} maxLength={20} secureTextEntry={seeConfirmPassword} placeholder="Повторите пароль"/>
                   <TouchableWithoutFeedback onPress={() => setSeeConfirmPassword(!seeConfirmPassword)}>
-                    <Image style={styles.img} source={require('../assets/lock.png')} />
+                    <Image style={styles.img} source={require('../assets/eyeclose.png')} />
                   </TouchableWithoutFeedback>
               </View>
             </View>
@@ -64,9 +64,9 @@ const styles = StyleSheet.create({
   },
     img:{
       position: 'absolute',
-      width: 16,
-      height: 21,
-      left: '88%',
+      width: 21,
+      height: 22,
+      left: '87%',
       alignSelf: 'center',
     },
     password:{

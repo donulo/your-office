@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, TouchableWithoutFeedback, Image } from 'react-native';
+import { StyleSheet, View, TouchableWithoutFeedback, Image, Modal } from 'react-native';
 
 export default function Map({ navigation }) {
   return (
@@ -7,7 +7,9 @@ export default function Map({ navigation }) {
       <View style={styles.common}>
         <TouchableWithoutFeedback>
           <View style={styles.arrow}>
+            <Modal>
             <Image style={styles.imgarrow} source={require('../assets/burger.png')} />
+            </Modal>
           </View>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => navigation.navigate('Settings')}>
