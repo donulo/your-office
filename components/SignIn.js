@@ -20,7 +20,7 @@ export default function SignIn({ navigation }) {
           <View style={styles.password}>
             <TextInput style={styles.TextInput} maxLength={20} secureTextEntry={seePassword} placeholder="Пароль"/>
             <TouchableWithoutFeedback onPress={() => setSeePassword(!seePassword)}>
-              <Image style={styles.img} source={require('../assets/eyeclose.png')} />
+              <Image style={styles.img} source={seePassword ? require('../assets/eyeclose.png') : require('../assets/eye.png')} />
             </TouchableWithoutFeedback>
           </View>
           <Text style={styles.texth3}>Забыли пароль?</Text>

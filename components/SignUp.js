@@ -21,13 +21,13 @@ export default function SignUp({ navigation }) {
               <View style={[styles.password, {marginBottom: 20,}]}>
                   <TextInput style={[styles.TextInput, {paddingRight: 50, }]} maxLength={20} secureTextEntry={seePassword} placeholder="Придумайте пароль"/>
                   <TouchableWithoutFeedback onPress={() => setSeePassword(!seePassword)}>
-                    <Image style={styles.img} source={require('../assets/eyeclose.png')} />
+                    <Image style={styles.img} source={seePassword ? require('../assets/eyeclose.png') : require('../assets/eye.png')} />
                   </TouchableWithoutFeedback>
               </View>
               <View style={styles.password}>
                   <TextInput style={[styles.TextInput, {paddingRight: 50}]} maxLength={20} secureTextEntry={seeConfirmPassword} placeholder="Повторите пароль"/>
                   <TouchableWithoutFeedback onPress={() => setSeeConfirmPassword(!seeConfirmPassword)}>
-                    <Image style={styles.img} source={require('../assets/eyeclose.png')} />
+                    <Image style={styles.img} source={ seeConfirmPassword ? require('../assets/eyeclose.png') : require('../assets/eye.png')} />
                   </TouchableWithoutFeedback>
               </View>
             </View>
