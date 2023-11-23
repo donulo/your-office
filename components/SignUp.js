@@ -6,6 +6,8 @@ export default function SignUp({ navigation }) {
     const [text, setValue] = useState('');
     const onChangeMail = (text) =>{ setValue(text)};
     const onChangePassword = () =>{};
+    const [seePassword, setSeePassword] = useState(true);
+    const [seeConfirmPassword, setSeeConfirmPassword] = useState(true);
     return (
         <View style={styles.back}>
         <View style={styles.circle}>
@@ -19,12 +21,16 @@ export default function SignUp({ navigation }) {
             <View style={styles.input}><TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Номер"/></View>
             <View style={styles.input}><TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Почта"/></View>
             <View style={styles.password}>
-                <TextInput style={styles.TextInput} maxLength={30} secureTextEntry={true} placeholder="Придумайте пароль"/>
-                <Image style={styles.img} source={require('../assets/eye1.png')} />
+                <TextInput style={styles.TextInput} maxLength={30} secureTextEntry={seePassword} placeholder="Придумайте пароль"/>
+                <TouchableWithoutFeedback onPress={() => setSeePassword(!seePassword)}>
+                  <Image style={styles.img} source={require('../assets/eye1.png')} />
+                </TouchableWithoutFeedback>
             </View>
             <View style={styles.password}>
-                <TextInput style={styles.TextInput} maxLength={30} secureTextEntry={true} placeholder="Повторите пароль"/>
-                <Image style={styles.img} source={require('../assets/eye1.png')} />
+                <TextInput style={styles.TextInput} maxLength={30} secureTextEntry={seeConfirmPassword} placeholder="Повторите пароль"/>
+                <TouchableWithoutFeedback onPress={() => setSeeConfirmPassword(!seeConfirmPassword)}>
+                  <Image style={styles.img} source={require('../assets/eye1.png')} />
+                </TouchableWithoutFeedback>
             </View>
           </View>
           <View style={styles.inputFields}>

@@ -6,6 +6,7 @@ export default function SignIn({ navigation }) {
   const [text, setValue] = useState('');
   const onChangeMail = (text) => { setValue(text) };
   const onChangePassword = () => { };
+  const [seePassword, setSeePassword] = useState(true);
 
   return (
     <View style={styles.back}>
@@ -19,8 +20,10 @@ export default function SignIn({ navigation }) {
         <View style={styles.inputFields}>
           <View style={styles.input}><TextInput style={styles.TextInput} maxLength={30} pointerEvents="box-only" placeholder="Почта" /></View>
           <View style={styles.password}>
-            <TextInput style={styles.TextInput} maxLength={30} secureTextEntry={true} placeholder="Пароль"/>
-            <Image style={styles.img} source={require('../assets/eye1.png')} />
+            <TextInput style={styles.TextInput} maxLength={30} secureTextEntry={seePassword} placeholder="Пароль"/>
+            <TouchableWithoutFeedback onPress={() => setSeePassword(!seePassword)}>
+              <Image style={styles.img} source={require('../assets/eye1.png')} />
+            </TouchableWithoutFeedback>
           </View>
           <Text style={styles.texth3}>Забыли пароль?</Text>
         </View>
