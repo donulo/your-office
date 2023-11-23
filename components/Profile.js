@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image, ViewStyle } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Image, ViewStyle } from 'react-native';
 
 export default function Profile({ navigation }) {
-  const [text, setValue] = useState('');
-  const onChangeMail = (text) => { setValue(text) };
-  const onChangePassword = () => { };
   return (
     <View style={styles.back}>
       <TouchableWithoutFeedback onPress={() => navigation.goBack()}>

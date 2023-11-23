@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image, ViewStyle, ScrollView } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image, ScrollView } from 'react-native';
 
 
-export default function Chat({ navigation }) {
-  const [items, setItems] = useState({});
-  const onChangeMail = (text) => { setValue(text) };
-  const onChangePassword = () => { };
-  
+export default function Chat({ navigation }) {  
   return (
     <View style={styles.back}>
             <TouchableWithoutFeedback onPress={() => navigation.goBack()}>

@@ -3,9 +3,6 @@ import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image } fr
 
 
 export default function SignUp({ navigation }) {
-    const [text, setValue] = useState('');
-    const onChangeMail = (text) =>{ setValue(text)};
-    const onChangePassword = () =>{};
     const [seePassword, setSeePassword] = useState(true);
     const [seeConfirmPassword, setSeeConfirmPassword] = useState(true);
     return (

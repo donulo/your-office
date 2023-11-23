@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Image, ViewStyle, ScrollView } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Image, ScrollView } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 
 LocaleConfig.locales['ru'] = {
@@ -39,11 +39,7 @@ LocaleConfig.locales['ru'] = {
 
 LocaleConfig.defaultLocale = 'ru';
 
-export default function Calendary({ navigation }) {
-  const [items, setItems] = useState({});
-  const onChangeMail = (text) => { setValue(text) };
-  const onChangePassword = () => { };
-  
+export default function Calendary({ navigation }) {  
   return (
     <View style={styles.back}>
       <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
