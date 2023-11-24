@@ -1,15 +1,15 @@
 import React from 'react';
-import { StyleSheet, View, TouchableWithoutFeedback, Image, Modal } from 'react-native';
+import { StyleSheet, View, TouchableWithoutFeedback, Image } from 'react-native';
+import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView'
 
 export default function Map({ navigation }) {
   return (
+    <React.Fragment>
     <View style={styles.back}>
       <View style={styles.common}>
         <TouchableWithoutFeedback>
           <View style={styles.arrow}>
-            <Modal>
             <Image style={styles.imgarrow} source={require('../assets/burger.png')} />
-            </Modal>
           </View>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => navigation.navigate('Settings')}>
@@ -18,6 +18,17 @@ export default function Map({ navigation }) {
           </View>
         </TouchableWithoutFeedback>
       </View>
+        <View style={styles.item}>
+          <ReactNativeZoomableView
+            maxZoom={1.5}
+            minZoom={1}
+            zoomStep={0.5}
+            initialZoom={1}
+            bindToBorders={true}
+            captureEvent={true}>
+            <Image style={[styles.map]} source={require('../assets/imagesformap/floor1.png')} />
+          </ReactNativeZoomableView>
+        </View>
       <View style={styles.circle}>
         <View style={styles.elementInCircle}>
           <TouchableWithoutFeedback onPress={() => navigation.navigate('Profile')}>
@@ -32,10 +43,21 @@ export default function Map({ navigation }) {
         </View>
       </View>
     </View>
+    </React.Fragment>
   );
 }
 
 const styles = StyleSheet.create({
+  item:{
+    top: '18%',
+    alignSelf: 'center',
+    position: 'absolute',
+    zIndex: 0,
+  },
+  map:{
+    width: 346,
+    height: 460,
+  },
   imgarrow: {
     width: 30,
     height: 17,
@@ -82,6 +104,7 @@ const styles = StyleSheet.create({
     height: 37,
   },
   common: {
+    zIndex: 1,
     width: '100%'
   },
   elementInCircle: {
@@ -96,6 +119,7 @@ const styles = StyleSheet.create({
     width: '110%',
     height: 100,
     borderWidth: 1,
+    zIndex:1,
     borderTopRightRadius: 52,
     borderTopLeftRadius: 52,
     alignItems: 'center',
